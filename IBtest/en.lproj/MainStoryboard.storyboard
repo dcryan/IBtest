@@ -40,21 +40,62 @@
                                     <action selector="changeGreeting:" destination="2" eventType="touchUpInside" id="c1k-zV-Qsr"/>
                                 </connections>
                             </button>
+                            <switch opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PCn-hL-G12">
+                                <connections>
+                                    <action selector="greetingSwitch:" destination="2" eventType="valueChanged" id="hoK-YR-rB5"/>
+                                </connections>
+                            </switch>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Greeting Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VFR-41-4C6">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="vKb-6N-IEu">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="280" id="dh3-8R-Tpk"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="changeSliderNumber:" destination="2" eventType="valueChanged" id="r2K-P8-iOU"/>
+                                </connections>
+                            </slider>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iqV-iX-VCg">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <progressView opaque="NO" contentMode="scaleToFill" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="ytk-Mc-fne">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="fpt-pR-dnq"/>
+                                </constraints>
+                            </progressView>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="nv0-nQ-8Rv" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="4TD-Db-xgc"/>
+                            <constraint firstItem="PCn-hL-G12" firstAttribute="leading" secondItem="VFR-41-4C6" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="4nr-Ww-M0h"/>
+                            <constraint firstItem="iqV-iX-VCg" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="BvE-nQ-ltG"/>
                             <constraint firstItem="GfJ-1a-pHy" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="G8z-Xs-8DG"/>
+                            <constraint firstItem="xhb-38-LP0" firstAttribute="centerX" secondItem="GfJ-1a-pHy" secondAttribute="centerX" type="default" id="HX8-ga-ug5"/>
+                            <constraint firstAttribute="trailing" secondItem="PCn-hL-G12" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="Krc-bl-W4M"/>
+                            <constraint firstItem="ytk-Mc-fne" firstAttribute="centerY" secondItem="iqV-iX-VCg" secondAttribute="centerY" type="default" id="Pxj-FJ-hcZ"/>
                             <constraint firstAttribute="bottom" secondItem="xhb-38-LP0" secondAttribute="bottom" constant="77" id="QO7-a6-HHa"/>
                             <constraint firstAttribute="trailing" secondItem="GfJ-1a-pHy" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="Sq6-u5-1sc"/>
+                            <constraint firstItem="VFR-41-4C6" firstAttribute="centerY" secondItem="PCn-hL-G12" secondAttribute="centerY" type="default" id="ZPn-PF-IOC"/>
+                            <constraint firstItem="PCn-hL-G12" firstAttribute="top" secondItem="3" secondAttribute="top" constant="64" id="ZsB-6i-poa"/>
                             <constraint firstItem="nv0-nQ-8Rv" firstAttribute="top" secondItem="3" secondAttribute="top" constant="20" symbolic="YES" type="default" id="ddS-e4-21k"/>
                             <constraint firstItem="GfJ-1a-pHy" firstAttribute="top" secondItem="3" secondAttribute="top" constant="220" id="erb-Yh-I5Y"/>
+                            <constraint firstItem="vKb-6N-IEu" firstAttribute="centerX" secondItem="VFR-41-4C6" secondAttribute="centerX" type="default" id="iXj-VO-yip"/>
                             <constraint firstItem="nv0-nQ-8Rv" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="kfM-qD-tHc"/>
-                            <constraint firstItem="GfJ-1a-pHy" firstAttribute="centerX" secondItem="xhb-38-LP0" secondAttribute="centerX" type="default" id="o7W-Ot-C24"/>
+                            <constraint firstItem="ytk-Mc-fne" firstAttribute="trailing" secondItem="vKb-6N-IEu" secondAttribute="trailing" type="default" id="mER-ag-NiW"/>
+                            <constraint firstAttribute="bottom" secondItem="vKb-6N-IEu" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="qcF-qx-cxm"/>
+                            <constraint firstItem="vKb-6N-IEu" firstAttribute="top" secondItem="iqV-iX-VCg" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="wuU-YG-eFk"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="greetingLabel" destination="VFR-41-4C6" id="rC0-j7-hzg"/>
                         <outlet property="label" destination="GfJ-1a-pHy" id="oy5-Zr-Eyb"/>
+                        <outlet property="progressIndicator" destination="ytk-Mc-fne" id="SIl-Qs-QEb"/>
+                        <outlet property="sliderLabel" destination="iqV-iX-VCg" id="ExF-PX-6QO"/>
                         <outlet property="textField" destination="nv0-nQ-8Rv" id="2tW-Ff-htE"/>
                     </connections>
                 </viewController>
@@ -62,6 +103,24 @@
             </objects>
         </scene>
     </scenes>
+    <classes>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="ViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="changeGreeting:"/>
+                <relationship kind="action" name="changeSliderNumber:" candidateClass="UISlider"/>
+                <relationship kind="action" name="greetingSwitch:" candidateClass="UISwitch"/>
+                <relationship kind="outlet" name="greetingLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="label" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="progressIndicator" candidateClass="UIProgressView"/>
+                <relationship kind="outlet" name="sliderLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="textField" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

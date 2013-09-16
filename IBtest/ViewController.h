@@ -11,7 +11,15 @@
 @interface ViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UITextField *textField;
 @property (weak, nonatomic) IBOutlet UILabel *label;
+@property (weak, nonatomic) IBOutlet UILabel *greetingLabel;
+@property (weak, nonatomic) IBOutlet UILabel *sliderLabel;
+@property (weak, nonatomic) IBOutlet UIProgressView *progressIndicator;
+
+- (IBAction)greetingSwitch:(UISwitch *)sender;
 - (IBAction)changeGreeting:(id)sender;
+- (IBAction)changeSliderNumber:(UISlider *)sender;
 
 @property (copy, nonatomic) NSString *userName;
+@property (copy, nonatomic) NSString *greeting;
+@property (copy, nonatomic) NSString *sliderNumber;
 @end
